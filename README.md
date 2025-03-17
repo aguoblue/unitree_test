@@ -1,0 +1,5 @@
+想把unitree_guide对gazebo里机器狗的控制用到unitree_mujoco机器狗
+依赖unitree_skd2
+
+当前情况：
+编译通过，可使用FSM状态机，wsad控制基本上没问题，jl控制转向存在问题
