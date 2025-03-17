@@ -9,12 +9,7 @@
 #include <pthread.h>
 
 #ifdef COMPILE_WITH_REAL_ROBOT
-    #ifdef ROBOT_TYPE_A1
-        #include "unitree_legged_sdk/unitree_legged_sdk.h"
-    #endif  // ROBOT_TYPE_A1
-    #ifdef ROBOT_TYPE_Go1
-        #include "unitree_legged_sdk/unitree_legged_sdk.h"
-    #endif  // ROBOT_TYPE_Go1
+   #include <unitree/idl/go2/LowState_.hpp>
 #endif  // COMPILE_WITH_REAL_ROBOT
 
 struct UserValue{
@@ -44,7 +39,7 @@ public:
     void setPassive(){userCmd = UserCommand::L2_B;}
     void setZero(){userValue.setZero();}
 #ifdef COMPILE_WITH_REAL_ROBOT
-    virtual void receiveHandle(UNITREE_LEGGED_SDK::LowState *lowState){};
+    virtual void receiveHandle(unitree_go::msg::dds_::LowState_ *lowState){};
 #endif  // COMPILE_WITH_REAL_ROBOT
 protected:
     virtual void* run(void *arg){return NULL;}

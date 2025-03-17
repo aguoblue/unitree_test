@@ -11,13 +11,9 @@
 WirelessHandle::WirelessHandle(){
 }
 
-void WirelessHandle::receiveHandle(UNITREE_LEGGED_SDK::LowState *lowState){
-#ifdef ROBOT_TYPE_A1
-    memcpy(&_keyData, lowState->wirelessRemote, 40);  // note: available in the unitree_legged_sdk_3.2
-#endif
-#ifdef ROBOT_TYPE_Go1
-    memcpy(&_keyData, &lowState->wirelessRemote[0], 40);
-#endif  
+void WirelessHandle::receiveHandle(unitree_go::msg::dds_::LowState_ *lowState){
+    memcpy(&_keyData, &lowState->wireless_remote(), 40);
+    
     if(((int)_keyData.btn.components.L2 == 1) && 
        ((int)_keyData.btn.components.B  == 1)){
         userCmd = UserCommand::L2_B;

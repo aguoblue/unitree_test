@@ -1,3 +1,0 @@
-/root/normal/unitree_test/build/CMakeFiles/rebuild_cache.dir
-/root/normal/unitree_test/build/CMakeFiles/junior_ctrl_test.dir
-/root/normal/unitree_test/build/CMakeFiles/edit_cache.dir
